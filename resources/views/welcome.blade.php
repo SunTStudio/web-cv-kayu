@@ -407,6 +407,76 @@
             pointer-events: none;
         }
 
+        /* --- New Hover Effects --- */
+
+        /* Keunggulan Hover */
+        .advantage-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15) !important;
+            border-color: var(--wood-gold) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .advantage-card:hover .advantage-icon {
+            background-color: var(--wood-gold) !important;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .advantage-card:hover .advantage-icon svg {
+            color: #3E2723 !important;
+        }
+
+        /* Gallery Hover */
+        .gallery-card {
+            overflow: hidden;
+        }
+
+        .gallery-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-card .overlay-content {
+            transition: all 0.4s ease;
+            background: linear-gradient(to top, rgba(62, 39, 35, 0.9), transparent) !important;
+        }
+
+        .gallery-card:hover .overlay-content {
+            padding-bottom: 2rem !important;
+        }
+
+        /* Contact Info Hover */
+        .contact-info-item {
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid transparent;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(212, 165, 116, 0.3);
+            transform: translateX(10px);
+        }
+
+        .contact-info-item:hover .icon-box {
+            background-color: white !important;
+            color: var(--wood-gold) !important;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(212, 165, 116, 0.5);
+        }
+
+        .icon-box {
+            transition: all 0.3s ease;
+        }
+
         /* Navbar Customization */
         .navbar-nav .nav-link {
             color: white;
@@ -483,6 +553,7 @@
                     <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
                     <li class="nav-item"><a href="#produk" class="nav-link">Produk</a></li>
                     <li class="nav-item"><a href="#keunggulan" class="nav-link">Keunggulan</a></li>
+                    <li class="nav-item"><a href="{{ route('artikel.show.all') }}" class="nav-link">Artikel</a></li>
                     <li class="nav-item"><a href="#galeri" class="nav-link">Galeri</a></li>
                     <li class="nav-item"><a href="#testimoni" class="nav-link">Testimoni</a></li>
                     <li class="nav-item">
@@ -618,9 +689,8 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 scroll-animate-left position-relative">
                     <div class="position-relative">
-                        <img src="{{ asset('img/headline.png') }}"
-                            alt="Tentang Kayu Jaya" class="rounded-4 shadow-lg w-100 object-fit-cover about-img"
-                            style="height: 500px;">
+                        <img src="{{ asset('img/headline.png') }}" alt="Tentang Kayu Jaya"
+                            class="rounded-4 shadow-lg w-100 object-fit-cover about-img" style="height: 500px;">
                         <div class="position-absolute bg-white rounded-4 shadow p-4 d-none d-md-block animate-float"
                             style="bottom: -1.5rem; right: -1.5rem; max-width: 20rem;">
                             <div class="d-flex align-items-center gap-3">
@@ -988,9 +1058,9 @@
 
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
-                    <div class="scroll-animate h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
+                    <div class="scroll-animate advantage-card h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
                         style="background: rgba(255,255,255,0.05); backdrop-filter: blur(4px);">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                        <div class="rounded-circle advantage-icon transition-all d-flex align-items-center justify-content-center mx-auto mb-4"
                             style="width: 4rem; height: 4rem; background-color: rgba(212, 165, 116, 0.2);">
                             <svg class="text-wood-gold" style="width: 2rem; height: 2rem;" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -1006,9 +1076,9 @@
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="scroll-animate delay-100 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
+                    <div class="scroll-animate advantage-card delay-100 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
                         style="background: rgba(255,255,255,0.05); backdrop-filter: blur(4px);">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                        <div class="rounded-circle advantage-icon transition-all d-flex align-items-center justify-content-center mx-auto mb-4"
                             style="width: 4rem; height: 4rem; background-color: rgba(212, 165, 116, 0.2);">
                             <svg class="text-wood-gold" style="width: 2rem; height: 2rem;" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -1024,9 +1094,9 @@
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="scroll-animate delay-200 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
+                    <div class="scroll-animate advantage-card delay-200 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
                         style="background: rgba(255,255,255,0.05); backdrop-filter: blur(4px);">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                        <div class="rounded-circle advantage-icon transition-all d-flex align-items-center justify-content-center mx-auto mb-4"
                             style="width: 4rem; height: 4rem; background-color: rgba(212, 165, 116, 0.2);">
                             <svg class="text-wood-gold" style="width: 2rem; height: 2rem;" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -1042,9 +1112,9 @@
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="scroll-animate delay-300 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
+                    <div class="scroll-animate advantage-card delay-300 h-100 rounded-4 p-4 text-center border border-white border-opacity-10"
                         style="background: rgba(255,255,255,0.05); backdrop-filter: blur(4px);">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                        <div class="rounded-circle advantage-icon transition-all d-flex align-items-center justify-content-center mx-auto mb-4"
                             style="width: 4rem; height: 4rem; background-color: rgba(212, 165, 116, 0.2);">
                             <svg class="text-wood-gold" style="width: 2rem; height: 2rem;" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -1083,85 +1153,84 @@
             <div class="scroll-animate rounded-4 overflow-hidden shadow-lg mb-5 position-relative">
                 <video class="w-100 object-fit-cover gallery-video" style="height: 400px;" controls
                     poster="{{ asset('img/proyek/proyek4.jpg') }}">
-                    <source src="{{ asset('img/videoProyek.mp4') }}"
-                        type="video/mp4">
+                    <source src="{{ asset('img/videoProyek.mp4') }}" type="video/mp4">
                 </video>
             </div>
 
             <!-- Image Grid -->
             <div class="row g-3">
                 <div class="col-md-6">
-                    <div class="scroll-animate delay-100 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-100 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem; max-height: 5rem;">
                         <img src="{{ asset('img/proyek/proyek2.jpg') }}" alt="Gudang Kayu"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Gudang Penyimpanan</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-200 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-200 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek1.jpg') }}" alt="Proses Pemotongan"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Pemotongan</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-300 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-300 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek3.jpg') }}" alt="Pengiriman"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Pengiriman</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-400 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-400 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek4.jpg') }}" alt="Detail Kayu"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Detail Serat</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-500 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-500 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek5.jpg') }}" alt="Proyek Konstruksi"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Proyek Konstruksi</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-400 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-400 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek2.jpg') }}" alt="Detail Kayu"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Detail Serat</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="scroll-animate delay-500 position-relative overflow-hidden rounded-4 h-100 gallery-item"
+                    <div class="scroll-animate delay-500 position-relative overflow-hidden rounded-4 h-100 gallery-item gallery-card"
                         style="min-height: 20rem;">
                         <img src="{{ asset('img/proyek/proyek6.jpg') }}" alt="Proyek Konstruksi"
                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4"
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 overlay-content"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <p class="text-white fw-semibold mb-0">Proyek Konstruksi</p>
                         </div>
@@ -1190,7 +1259,7 @@
 
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="scroll-animate testimonial-card rounded-4 p-4 h-100">
+                    <div class="scroll-animate testimonial-card card-hover rounded-4 p-4 h-100">
                         <div class="d-flex align-items-center gap-1 mb-3 text-wood-gold">
                             @for ($i = 0; $i < 5; $i++)
                                 <svg style="width: 1.25rem; height: 1.25rem;" fill="currentColor"
@@ -1216,7 +1285,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="scroll-animate delay-100 testimonial-card rounded-4 p-4 h-100">
+                    <div class="scroll-animate delay-100 testimonial-card card-hover rounded-4 p-4 h-100">
                         <div class="d-flex align-items-center gap-1 mb-3 text-wood-gold">
                             @for ($i = 0; $i < 5; $i++)
                                 <svg style="width: 1.25rem; height: 1.25rem;" fill="currentColor"
@@ -1242,7 +1311,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="scroll-animate delay-200 testimonial-card rounded-4 p-4 h-100">
+                    <div class="scroll-animate delay-200 testimonial-card card-hover rounded-4 p-4 h-100">
                         <div class="d-flex align-items-center gap-1 mb-3 text-wood-gold">
                             @for ($i = 0; $i < 5; $i++)
                                 <svg style="width: 1.25rem; height: 1.25rem;" fill="currentColor"
@@ -1289,8 +1358,8 @@
                         penawaran terbaik hari ini.</p>
 
                     <div class="vstack gap-4">
-                        <div class="d-flex gap-3">
-                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0"
+                        <div class="d-flex gap-3 contact-info-item">
+                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0 icon-box"
                                 style="width: 3rem; height: 3rem; color: #3E2723;">
                                 <svg style="width: 1.5rem; height: 1.5rem;" fill="white" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -1307,8 +1376,8 @@
                             </div>
                         </div>
 
-                        <div class="d-flex gap-3">
-                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0"
+                        <div class="d-flex gap-3 contact-info-item">
+                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0 icon-box"
                                 style="width: 3rem; height: 3rem; color: #3E2723;">
                                 <svg style="width: 1.5rem; height: 1.5rem;" fill="white" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -1322,8 +1391,8 @@
                             </div>
                         </div>
 
-                        <div class="d-flex gap-3">
-                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0"
+                        <div class="d-flex gap-3 contact-info-item">
+                            <div class="rounded-circle bg-wood-gold d-flex align-items-center justify-content-center flex-shrink-0 icon-box"
                                 style="width: 3rem; height: 3rem; color: #3E2723;">
                                 <svg style="width: 1.5rem; height: 1.5rem;" fill="white" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -1395,7 +1464,7 @@
 
         <div class="container mt-5 pt-5 border-top border-white border-opacity-10">
             <div class="text-center text-white-50 small">
-                <p class="mb-0">&copy; 2024 Kayu Jaya. All rights reserved.</p>
+                <p class="mb-0">&copy; 2026 PT Sintaks Media Solusindo. All rights reserved.</p>
             </div>
         </div>
     </section>
