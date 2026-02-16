@@ -540,7 +540,7 @@
             </a>
 
             <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mobileMenu">
+                data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
                 <svg class="w-8 h-8" style="width: 32px; height: 32px;" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -585,6 +585,9 @@
                 data-bs-dismiss="offcanvas">Galeri</a>
             <a href="#testimoni" class="fs-2 fw-semibold text-white text-decoration-none hover-gold"
                 data-bs-dismiss="offcanvas">Testimoni</a>
+                {{-- artikel --}}
+            <a href="{{ route('artikel.show.all') }}" class="fs-2 fw-semibold text-white text-decoration-none hover-gold"
+                data-bs-dismiss="offcanvas">Artikel</a>
             <a href="#kontak" class="fs-2 fw-semibold text-white text-decoration-none hover-gold"
                 data-bs-dismiss="offcanvas">Kontak</a>
         </div>
@@ -1512,7 +1515,7 @@
                 const increment = target / (duration / 16);
 
                 let current = 0;
-                const updateCounter = () => {
+                const updateCounter = (timestamp) => {
                     current += increment;
                     if (current < target) {
                         counter.innerText = Math.ceil(current);
